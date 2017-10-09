@@ -1,0 +1,93 @@
+
+\section{Scope}
+
+This Working Group is to evaluate and recommend options for lossy compression 
+algorithms to be used on LSST images in a way that continues to satisfy LSST 
+science use cases (with dark energy being the primary one). All major types 
+of images shall be considered as candidates for compression, including raw 
+data, Processed Visit Images, co-adds, and templates.  This working group is 
+to convene immediately and finish its investigation by 2017 October 31.
+
+\section{Background}
+
+This group has emerged as the response to RFC-325 that recognized that user 
+experience will be unacceptably impacted by the long latency required to 
+access the LSST data from tape media. Unfortunately, preliminary analysis
+indicated that retaining all processed images on disk would be too costly 
+and therefore not feasible, unless lossy compression is applied. The same
+analysis indicated that storing all raw data on disk (w/o lossy compression)
+is feasible.
+
+The LSST has traditionally avoided lossy compression for any of its image 
+data products (including the large co-added images as well as templates 
+retained for each data release). Anecdotal experience from DES and other 
+surveys indicates that lossy compression can be applied, without loss of 
+scientific fidelity. If this is the case, the reduced disk space needs may 
+enable us to retain on low-latency media more data that we otherwise would 
+(rather than regenerate or pull from tape. This group has been convened to 
+study the problem and report on the results.
+
+The working group should rely as much as possible on prior art found in the
+literature, and prefer applications of off-the-shelf solution rather than 
+developing custom LSST-specific compression tools.
+
+\section{Responsibilities}
+
+The Working Group (WG) has the following responsibilities:
+
+\begin{itemize}
+    \item Define criteria for "science-usable" lossy-compressed processed images across all LSST image types,
+    \item Collect compression algorithm candidates (preferring existing in "off-the-shelf” tools/libraries),
+    \item Evaluate their compression ratios (at "science-usable" quality),
+    \item Evaluate constraints on processing that usage of compression may impose (e.g., avoidance of repeated re-compressions),
+    \item Quantify the savings from application of lossy compression, in the context of the LSST Sizing Model (LDM-144),
+    \item Make recommendations on which image types to lossy-compress, the algorithms to apply, and the description of processing constraints these would impose.
+\end{itemize}
+
+It should be noted that it is \textbf{not} intended that this group specifically
+investigate or recommend file formats (e.g. FITS, HDF5) excepting the utility 
+of methods that are available to provide compression within a given format.
+
+
+\section{Specific Tasks}
+
+\subsection{Acceptable Loss}
+
+The SRD outlines requirements for LSST.  Those requirements should be met 
+(or the impact understood) if lossy compression were implemented.  Those 
+requirements need to be considered in order to define what is considered 
+an ``acceptable loss."
+
+\subsection{Benchmarks}
+
+The Working Group will obtain benchmarks based on existing astronomical data in order 
+to provide a measure of lossy compression algorthims': speed, compression factor, 
+and fidelity.  Where fidelity means a systematic comparsion of image and catalog 
+products with and without lossy compression applied.
+
+\subsection{Recommendations}
+
+The Working Group will provide a recommendation on the suitablity of the implementation
+of a lossy compression algorithm of LSST products with a figure of merit that can be 
+applied with the LSST Sizing Model (LDM-144).
+
+
+\section{Membership}
+
+Membership of roughly four people is optimal and should include persons familiar 
+with weak-lensing and difference imaging concerns.
+The proposed membership is:
+
+\begin{itemize}
+    \item Robert Gruendl (NCSA; \textbf{Chair}),
+    \item Paul Price (Princeton),
+    \item Bob Armstrong (Princeton),
+    \item Krzysztof Findeisen (UW; replacing John Parejko),
+    \item Eric Morganson (DES/NCSA; observer)
+    \item Ben Emmons (EPO Tucson; observer)
+\end{itemize}
+
+
+\section{Reporting}
+
+The WG Chair shall report directly to the DM Project manager weekly.
