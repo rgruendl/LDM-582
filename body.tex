@@ -3,14 +3,14 @@
 
 This Working Group is to evaluate and recommend options for lossy compression 
 algorithms to be used on LSST images in a way that continues to satisfy LSST 
-science use cases (with dark energy being the primary one). All major types 
-of images shall be considered as candidates for compression, including raw 
-data, Processed Visit Images, co-adds, and templates.  This working group is 
-to convene immediately and finish its investigation by 2017 October 31.
+science use cases. All major types of images shall be considered as candidates 
+for compression, including raw data, Processed Visit Images, co-adds, and 
+templates.  This working group is to convene immediately and finish its 
+investigation by 2017 October 31.
 
 \section{Background}
 
-This group has emerged as the response to RFC-325 that recognized that user 
+This group has emerged as the response to \jira{RFC-325} that recognized that user 
 experience will be unacceptably impacted by the long latency required to 
 access the LSST data from tape media. Unfortunately, preliminary analysis
 indicated that retaining all processed images on disk would be too costly 
@@ -40,7 +40,7 @@ The Working Group (WG) has the following responsibilities:
     \item Collect compression algorithm candidates (preferring existing in "off-the-shelf” tools/libraries),
     \item Evaluate their compression ratios (at "science-usable" quality),
     \item Evaluate constraints on processing that usage of compression may impose (e.g., avoidance of repeated re-compressions),
-    \item Quantify the savings from application of lossy compression, in the context of the LSST Sizing Model (LDM-144),
+    \item Quantify the savings from application of lossy compression, in the context of the LSST Sizing Model (\citedsp{LDM-144}),
     \item Make recommendations on which image types to lossy-compress, the algorithms to apply, and the description of processing constraints these would impose.
 \end{itemize}
 
@@ -69,7 +69,7 @@ products with and without lossy compression applied.
 
 The Working Group will provide a recommendation on the suitablity of the implementation
 of a lossy compression algorithm of LSST products with a figure of merit that can be 
-applied with the LSST Sizing Model (LDM-144).
+applied with the LSST Sizing Model (\citedsp{LDM-144}).
 
 
 \section{Membership}
